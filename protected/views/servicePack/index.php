@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create ServicePack', 'url'=>array('create')),
-	array('label'=>'Manage ServicePack', 'url'=>array('admin')),
+	array('label'=>'Создать пакет услуг', 'url'=>array('create')),
+	array('label'=>'Управление пакетами услуг', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Service Packs</h1>
+<h1>Пакеты услуг</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -3,13 +3,13 @@
 /* @var $model ServicePack */
 
 $this->breadcrumbs=array(
-	'Service Packs'=>array('index'),
-	'Manage',
+	'Пакеты услуг'=>array('index'),
+	'Управление',
 );
 
 $this->menu=array(
-	array('label'=>'List ServicePack', 'url'=>array('index')),
-	array('label'=>'Create ServicePack', 'url'=>array('create')),
+	array('label'=>'Список пакетов услуг', 'url'=>array('index')),
+	array('label'=>'Создать пакет услуг', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,12 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Service Packs</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<h1>Управление пакетами услуг</h1>
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">

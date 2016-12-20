@@ -127,7 +127,7 @@ class Payment extends CActiveRecord {
         $res = $command->queryAll();
         $output = "";
         foreach($res as $val){
-            $output .= $val['total_price'] . $val['valuta'] . "<br>";
+            $output .= $val['total_price'] . " " . $val['valuta'] . "<br>";
         }                
         return $output;
     }

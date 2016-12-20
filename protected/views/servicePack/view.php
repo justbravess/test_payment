@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ServicePack', 'url'=>array('index')),
-	array('label'=>'Create ServicePack', 'url'=>array('create')),
-	array('label'=>'Update ServicePack', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete ServicePack', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage ServicePack', 'url'=>array('admin')),
+	array('label'=>'Список пакетов услуг', 'url'=>array('index')),
+	array('label'=>'Создать пакет услуг', 'url'=>array('create')),
+	array('label'=>'Редактировать пакет услуг', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Удалить пакет услуг', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Вы действительно хотите удалить пакет услуг?')),
+	array('label'=>'Усправление пакетами услуг', 'url'=>array('admin')),
 );
 ?>
 

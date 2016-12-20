@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List ServicePack', 'url'=>array('index')),
-	array('label'=>'Manage ServicePack', 'url'=>array('admin')),
+	array('label'=>'Список пакетов услуг', 'url'=>array('index')),
+	array('label'=>'Управление пакетами услуг', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create ServicePack</h1>
+<h1>Создать пакет услуг</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
