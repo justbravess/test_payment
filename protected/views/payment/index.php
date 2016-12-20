@@ -40,9 +40,20 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         array('name' => 'email', 'header' => 'E-mail', 'value' => '$data->email'),
         array('name' => 'date', 'header' => 'Дата', 'value' => 'Yii::app()->dateFormatter->format("dd.MM.yyyy", $data->date)'),
-        array('name' => 'service_pack_search', 'filter'=>  $service_pack_names, 'header' => 'Пакет услуг', 'value' => '$data->service_pack->name'),
-        array('name' => 'service_pack_price_search', 'header' => 'Цена', 'value' => '$data->service_pack->price'),        
+        array(
+            'name' => 'service_pack_search', 
+            'filter'=>  $service_pack_names, 
+            'header' => 
+            'Пакет услуг', 
+            'value' => '$data->service_pack->name',
+            'footer' => "Итого:"),
+        array(
+            'name' => 'service_pack_price_search', 
+            'header' => 'Цена', 
+            'value' => '$data->service_pack->price . " " . $data->service_pack->valuta', 
+            'footer'=>'' . $model->getTotals($model->search()->getKeys()),
+            ),        
     )
-        )
+    )
 );
 ?>

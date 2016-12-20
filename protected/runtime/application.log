@@ -961,3 +961,111 @@ REQUEST_URI=/index.php?r=payment
 in E:\webserver\OpenServer\domains\test_payment\protected\views\payment\index.php (47)
 in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (29)
 in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:51:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY valuta' at line 6. The SQL statement executed was: 
+            SELECT SUM(price) AS total_price,valuta  
+            FROM payments as p
+            LEFT JOIN service_packs as s ON p.service_pack_id = s.id
+            WHERE p.id IN (3,1,2)
+            ORDER BY valuta
+            GROUP BY valuta
+        .
+in E:\webserver\OpenServer\domains\test_payment\protected\models\Payment.php (128)
+in E:\webserver\OpenServer\domains\test_payment\protected\views\payment\index.php (48)
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (31)
+2016/12/20 10:51:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY valuta' at line 6. The SQL statement executed was: 
+            SELECT SUM(price) AS total_price,valuta  
+            FROM payments as p
+            LEFT JOIN service_packs as s ON p.service_pack_id = s.id
+            WHERE p.id IN (3,1,2)
+            ORDER BY valuta
+            GROUP BY valuta
+        ' in E:\webserver\OpenServer\domains\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\webserver\OpenServer\domains\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\webserver\OpenServer\domains\test_payment\protected\models\Payment.php(128): CDbCommand->queryAll()
+#2 E:\webserver\OpenServer\domains\test_payment\protected\views\payment\index.php(48): Payment->getTotals(Array)
+#3 E:\webserver\OpenServer\domains\yii\framework\web\CBaseController.php(126): require('E:\webserver\Op...')
+#4 E:\webserver\OpenServer\domains\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\webserver\Op...', Array, true)
+#5 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\webserver\Op...', Array, true)
+#6 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php(31): CController->render('index', Array)
+#8 E:\webserver\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionIndex()
+#9 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\webserver\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 E:\webserver\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('payment')
+#14 E:\webserver\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 E:\webserver\OpenServer\domains\test_payment\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=payment
+HTTP_REFERER=http://testpayment.lh/index.php?r=payment
+---
+2016/12/20 10:53:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')            
+            GROUP BY valuta
+            ORDER BY valuta' at line 4. The SQL statement executed was: 
+            SELECT SUM(price) AS total_price,valuta  
+            FROM payments as p
+            LEFT JOIN service_packs as s ON p.service_pack_id = s.id
+            WHERE p.id IN ()            
+            GROUP BY valuta
+            ORDER BY valuta
+        .
+in E:\webserver\OpenServer\domains\test_payment\protected\models\Payment.php (128)
+in E:\webserver\OpenServer\domains\test_payment\protected\views\payment\index.php (54)
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (31)
+2016/12/20 10:53:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')            
+            GROUP BY valuta
+            ORDER BY valuta' at line 4. The SQL statement executed was: 
+            SELECT SUM(price) AS total_price,valuta  
+            FROM payments as p
+            LEFT JOIN service_packs as s ON p.service_pack_id = s.id
+            WHERE p.id IN ()            
+            GROUP BY valuta
+            ORDER BY valuta
+        ' in E:\webserver\OpenServer\domains\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\webserver\OpenServer\domains\yii\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\webserver\OpenServer\domains\test_payment\protected\models\Payment.php(128): CDbCommand->queryAll()
+#2 E:\webserver\OpenServer\domains\test_payment\protected\views\payment\index.php(54): Payment->getTotals(Array)
+#3 E:\webserver\OpenServer\domains\yii\framework\web\CBaseController.php(126): require('E:\webserver\Op...')
+#4 E:\webserver\OpenServer\domains\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('E:\webserver\Op...', Array, true)
+#5 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(869): CBaseController->renderFile('E:\webserver\Op...', Array, true)
+#6 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php(31): CController->render('index', Array)
+#8 E:\webserver\OpenServer\domains\yii\framework\web\actions\CInlineAction.php(49): PaymentController->actionIndex()
+#9 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 E:\webserver\OpenServer\domains\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\webserver\OpenServer\domains\yii\framework\web\CWebApplication.php(282): CController->run('')
+#13 E:\webserver\OpenServer\domains\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('payment')
+#14 E:\webserver\OpenServer\domains\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 E:\webserver\OpenServer\domains\test_payment\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?Payment%5Bemail%5D=&Payment%5Bdate%5D=&Payment%5Bservice_pack_search%5D=2&Payment%5Bservice_pack_price_search%5D=&Payment_page=1&ajax=payment-grid&r=payment
+HTTP_REFERER=http://testpayment.lh/index.php?r=payment
+---
+2016/12/20 10:53:22 [warning] [application] Failed to set unsafe attribute "date_start_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:22 [warning] [application] Failed to set unsafe attribute "date_end_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:28 [warning] [application] Failed to set unsafe attribute "date_start_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:28 [warning] [application] Failed to set unsafe attribute "date_end_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:37 [warning] [application] Failed to set unsafe attribute "date_start_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:37 [warning] [application] Failed to set unsafe attribute "date_end_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:51 [warning] [application] Failed to set unsafe attribute "date_start_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)
+2016/12/20 10:53:51 [warning] [application] Failed to set unsafe attribute "date_end_search" of "Payment".
+in E:\webserver\OpenServer\domains\test_payment\protected\controllers\PaymentController.php (13)
+in E:\webserver\OpenServer\domains\test_payment\index.php (13)

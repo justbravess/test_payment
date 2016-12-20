@@ -23,6 +23,7 @@ class PaymentController extends Controller
         $service_pack_names = CHtml::listData($service_packs, 'id', 'name');
 
         $dataProvider = $model->search();
+        
         $this->render('index', array(
             'dataProvider' => $dataProvider,
             'model' => $model,
