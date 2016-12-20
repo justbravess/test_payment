@@ -7,10 +7,12 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'Тестовое задание',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
+    
+        'language' => 'ru-RU',
 
 	// autoloading model and component classes
 	'import'=>array(

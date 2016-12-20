@@ -14,13 +14,13 @@
 
 ?>
 	<div class="row">
-		<?php  echo $form->label($model,'email'); ?>
-		<?php  echo $form->textField($model,'email'); ?>
+		Дата начала:
+		<?php  echo $form->dateField($model,'date_start_search'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'service_pack_id'); ?>
-		<?php echo $form->textField($model,'service_pack_search'); ?>
+		Дата окончания:
+		<?php echo $form->dateField($model,'date_end_search'); ?>
 	</div>
 
 	<div class="row buttons">

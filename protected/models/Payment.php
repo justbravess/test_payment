@@ -13,6 +13,8 @@ class Payment extends CActiveRecord
 {
     public $service_pack_search;
     public $service_pack_price_search;
+    public $date_start_search;
+    public $date_end_search;
     
 	/**
 	 * @return string the associated database table name
@@ -89,11 +91,18 @@ class Payment extends CActiveRecord
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('email',$this->email,true);
                 $criteria->compare('service_pack.name', $this->service_pack_search, true);
-                $criteria->compare('service_pack.price', $this->service_pack_price_search, true);
+                $criteria->compare('service_pack.price', $this->service_pack_price_search, true);                
+                
+                if ($this->date_start_search != "" && $this->date_end_search != ""){
+                    $date_start = Yii::app()->dateFormatter->format("yyyy-MM-dd", $this->date_start_search);
+                    $date_end = Yii::app()->dateFormatter->format("yyyy-MM-dd", $this->date_end_search);
+                    $criteria->addBetweenCondition('date',$date_start, $date_end);
+                }
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'sort'=>array(
+                            'defaultOrder'=>'date ASC',
                             'attributes'=>array(
                                 'service_pack_search'=>array(
                                     'asc'=>'service_pack.name',

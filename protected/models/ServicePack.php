@@ -82,7 +82,7 @@ class ServicePack extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('price',$this->price,true);
 		$criteria->compare('valuta',$this->valuta,true);
-
+                                
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
