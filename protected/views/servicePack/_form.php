@@ -7,11 +7,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'service-pack-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
+	'id'=>'service-pack-form',	
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -33,8 +29,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'valuta'); ?>
-                <?php echo $form->dropDownList($model,'valuta', array('rub' => 'Рубль', 'doll' => 'Доллар', 'euro' => 'Евро')); ?>
-		<?php //  echo $form->textField($model,'valuta',array('size'=>50,'maxlength'=>50)); ?>
+                <?php echo $form->dropDownList($model,'valuta', array('usd' => 'Доллар', 'eur' => 'Евро')); ?>
 		<?php echo $form->error($model,'valuta'); ?>
 	</div>
 
