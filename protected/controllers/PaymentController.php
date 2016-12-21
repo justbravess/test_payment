@@ -2,6 +2,21 @@
 
 class PaymentController extends Controller {
 
+    public function filters()
+    {
+        return array( 'accessControl' ); // perform access control for CRUD operations
+    }
+    
+    public function accessRules()
+    {
+        return array(
+            array('allow', // allow admin to access all actions
+                'users'=>array('admin'),
+            ),
+            array('deny'),
+        );
+    }
+    
     /**
      * Lists all models.
      */
